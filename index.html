@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curvas Paramétricas – Bézier & Spline</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+
+        <!-- MENU LATERAL --------------------------------------- -->
+        <aside id="sidebar">
+            <h2>Curvas Paramétricas</h2>
+
+            <div class="section">
+                <label for="curveType">Tipo de Curva:</label>
+                <select id="curveType">
+                    <option value="bezier">Bézier</option>
+                    <option value="spline">Spline</option>
+                </select>
+            </div>
+
+            <!-- Configurações Bézier ----------------------------- -->
+            <div id="bezierMenu" class="section">
+                <h3>Bézier</h3>
+
+                <label>Peso do ponto selecionado:</label>
+                <input id="weightSlider" type="range" min="1" max="10" value="1">
+                <span id="weightValue">1</span>
+            </div>
+
+            <!-- Configurações Spline ----------------------------- -->
+            <div id="splineMenu" class="section hidden">
+                <h3>Spline</h3>
+
+                <label for="splineDegree">Grau:</label>
+                <input id="splineDegree" type="number" min="2" max="5" value="3">
+
+                <label for="splineStep">Passo:</label>
+                <input id="splineStep" type="range" min="10" max="200" value="80">
+                <span id="stepValue">80</span>
+            </div>
+
+            <button id="exportBtn">Exportar JSON</button>
+            <button id="clearBtn">Limpar Tela</button>
+        </aside>
+
+        <!-- CANVAS ---------------------------------------------- -->
+        <main id="main">
+            <canvas id="canvas"></canvas>
+        </main>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
